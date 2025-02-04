@@ -17,6 +17,7 @@ ENV CRON_SCHEDULE="0 0 * * *"
 ENV BACKUP_ROTATION=7
 # Run backup on container startup
 ENV RUN_ON_STARTUP=true
+ENV ENABLE_GZIP=true
 
 WORKDIR /
 

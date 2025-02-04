@@ -39,6 +39,7 @@ docker run -d \
   -e REMOTE_HOST="192.168.1.1" \         # Remote host IP
   -e REMOTE_PATH="/remote/folder" \      # Remote folder to sync
   -e CRON_SCHEDULE="0 * * * *" \         # Run every hour
+  -e ENABLE_GZIP="true"
   backup-over-rsync
 ```
 
@@ -60,7 +61,8 @@ docker logs backup-over-rsync
 | `FINAL_DESTINATION_PATH`| Path where compressed backups will be stored    | `/local/folder`     |
 | `SERVICE`               | Name of the service for backup naming           | `SERVICE`           |
 | `BACKUP_ROTATION`       | Number of backups to keep before deletion       | `7`                 |
-| `CRON_SCHEDULE`        | Sync frequency in cron format                   | `0 * * * *` (hourly) |
+| `ENABLE_GZIP`           | Runs gzip after tar                             | `true`              |
+| `CRON_SCHEDULE`         | Sync frequency in cron format                   | `0 * * * *` (hourly) |
 
 ---
 
